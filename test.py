@@ -1,39 +1,31 @@
-import sys
-class Solution:
-    def get_dot_num(self, nums):
-        a=-1
-        alist=[-1,-2,-3]
-        b = alist.copy()
-        def ff(aa,aalist):
-            aa=aa*a
-            aalist = aalist+alist
-            return aa,aalist
-        
-        return ff(99,[9,99,999])
 
-if __name__ == '__main__':
+
+def get_no_repeat_substr(s):
     
-    N = int(input().split()[0])
-#
-    #print(_nums)
-    cls =  Solution()
-    res = cls.get_dot_num(N)
-    print(res)
+    windows = []
+    no_repeat_set = set()
+    max_len = 0
     
-    
-    '''
-    4
-    1 2 1 3
-    1 2 1 5
-    1 2 1 9
-    4 4 4 6
-    
-    4
-    1 1 3 1
-    2 1 5 1
-    2 1 9 1
-    4 4 7 4
-    
-    
-    '''
+    i=0
+    for i in range(len(s)):
+        if s[i] not in no_repeat_set:
+            no_repeat_set.update(s[i])
+            windows.append(s[i])
+        else:
+            max_len = max(max_len, len(no_repeat_set))
+            windows = windows[ windows.index(s[i])+1 : ]
+            
+            no_repeat_set = set(windows)
+        i+=1
+    return max_len
+            
         
+xy = ["1","2","3"]
+xyset = set(xy)
+print(xyset)
+trace_xy_set_copy = set(xyset)
+print(trace_xy_set_copy)
+trace_xy_set_copy.add("23")
+print(trace_xy_set_copy)
+
+
