@@ -20,12 +20,7 @@ def get_no_repeat_substr(s):
     return max_len
             
         
-xy = ["1","2","3"]
-xyset = set(xy)
-print(xyset)
-trace_xy_set_copy = set(xyset)
-print(trace_xy_set_copy)
-trace_xy_set_copy.add("23")
-print(trace_xy_set_copy)
+a=[1,2,3,4,5,6,7]
+print(a[:3],a[:111])
 
 
